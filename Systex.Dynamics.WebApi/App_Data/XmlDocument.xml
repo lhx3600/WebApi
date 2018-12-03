@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Systex.Dynamics.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Systex.Dynamics.WebApi.Controllers.SalesController">
+            <summary>
+            销售管理控制
+            </summary>
+        </member>
+        <member name="M:Systex.Dynamics.WebApi.Controllers.SalesController.GetEntityListInfo(Systex.Dynamics.Api.Extension.MetadataEntityModel)">
+            <summary>
+            查询指定实体的列表
+            </summary>
+            <param name="model">请求模型</param>
+            <returns>返回列表信息</returns>
+        </member>
+        <member name="M:Systex.Dynamics.WebApi.Controllers.SalesController.GetEntityListByViewInfo(Systex.Dynamics.Api.Extension.MetadataEntityModel)">
+            <summary>
+            查询视图对应的信息
+            </summary>
+            <param name="model">请求模型</param>
+            <returns>返回列表信息</returns>
+        </member>
+        <member name="M:Systex.Dynamics.WebApi.Controllers.SalesController.GetEntityByIdInfo(Systex.Dynamics.Api.Extension.MetadataEntityModel)">
+            <summary>
+            查询指定的实体数据
+            </summary>
+            <param name="model">实体信息 (实体名称，实体ID, 字段集合为必须项)</param>
+            <returns></returns>
+        </member>
+        <member name="P:Systex.Dynamics.WebApi.Providers.ApplicationOAuthProvider.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Systex.Dynamics.WebApi.Providers.ApplicationOAuthProvider.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Systex.Dynamics.WebApi.Providers.ApplicationOAuthProvider.RoleType">
+            <summary>
+            角色类型
+            </summary>
+        </member>
+        <member name="M:Systex.Dynamics.WebApi.Providers.ApplicationOAuthProvider.ValidateClientAuthentication(Microsoft.Owin.Security.OAuth.OAuthValidateClientAuthenticationContext)">
+            <summary>
+            客户端验证模式
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Systex.Dynamics.WebApi.Providers.ApplicationOAuthProvider.GrantClientCredentials(Microsoft.Owin.Security.OAuth.OAuthGrantClientCredentialsContext)">
+            <summary>
+            分派客户端验证值
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Systex.Dynamics.WebApi.Providers.ApplicationOAuthProvider.CheckUserPassword(System.String@)">
+            <summary>
+            验证输入的密码
+            </summary>
+            <param name="password">加密密码</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
