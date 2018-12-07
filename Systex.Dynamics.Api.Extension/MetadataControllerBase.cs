@@ -26,12 +26,18 @@ using System.Xml.XPath;
 
 namespace Systex.Dynamics.Api.Extension
 {
+    [Authorize]
     [RoutePrefix("api/data")]
     /// <summary>
     /// 元数据控制
     /// </summary>
     public sealed partial class MetadataController : ApiControllerBase, IMetadata
     {
+        /// <summary>
+        /// 查询指定实体的列表
+        /// </summary>
+        /// <param name="model">请求模型</param>
+        /// <returns>返回列表信息</returns>
         [Route("list")]
         [HttpPost]
         public IHttpActionResult GetEntityList([FromBody]MetadataEntityModel model)
@@ -108,8 +114,9 @@ namespace Systex.Dynamics.Api.Extension
 
                 //使用fetchxml替换.内置ID参数
                 string fetchXml = doc.ToString();
-                fetchXml = fetchXml.Replace("{#clientid}",
-                    UserIdentityManager.FindClientId(User.Identity as ClaimsIdentity));
+                if (fetchXml.Contains("{#clientid}"))
+                    fetchXml = fetchXml.Replace("{#clientid}",
+                        UserIdentityManager.FindClientId(User.Identity as ClaimsIdentity));
 
                 //加载传入参数的值
                 fetchXml = string.Format(fetchXml,

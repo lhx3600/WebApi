@@ -102,6 +102,7 @@ namespace Systex.Dynamics.WebApi
                         // more Xml comment files.
                         //
                         c.IncludeXmlComments(GetXmlCommentsPath());
+                        c.IncludeXmlComments(GetXmlMetadataCommentsPath());
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -254,7 +255,12 @@ namespace Systex.Dynamics.WebApi
 
         private static string GetXmlCommentsPath()
         {
-            return string.Format("{0}/bin/Systex.Dynamics.WebApi.XML", System.AppDomain.CurrentDomain.BaseDirectory);
+            return string.Format("{0}/bin/Systex.Dynamics.WebApi.xml", System.AppDomain.CurrentDomain.BaseDirectory);
+        }
+
+        private static string GetXmlMetadataCommentsPath()
+        {
+            return string.Format("{0}/bin/Systex.Dynamics.Api.Extension.xml", System.AppDomain.CurrentDomain.BaseDirectory);
         }
 
     }

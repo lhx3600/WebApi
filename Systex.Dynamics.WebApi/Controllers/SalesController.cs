@@ -12,7 +12,7 @@ namespace Systex.Dynamics.WebApi.Controllers
     public class SalesController : ApiControllerBase
     {
         /// <summary>
-        /// 查询指定实体的列表
+        /// 搜索订单信息
         /// </summary>
         /// <param name="model">请求模型</param>
         /// <returns>返回列表信息</returns>
@@ -25,7 +25,7 @@ namespace Systex.Dynamics.WebApi.Controllers
         }
 
         /// <summary>
-        /// 查询视图对应的信息
+        /// 查找订单关联字段
         /// </summary>
         /// <param name="model">请求模型</param>
         /// <returns>返回列表信息</returns>
@@ -38,7 +38,7 @@ namespace Systex.Dynamics.WebApi.Controllers
         }
 
         /// <summary>
-        /// 查询指定的实体数据
+        /// 共享订单数据
         /// </summary>
         /// <param name="model">实体信息 (实体名称，实体ID, 字段集合为必须项)</param>
         /// <returns></returns>

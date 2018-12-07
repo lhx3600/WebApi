@@ -18,14 +18,8 @@ namespace Systex.Dynamics.WebApi
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional /*, namespaces = "Systex.Dynamics.WebApi" */}
+                defaults: new { id = RouteParameter.Optional }
             );
-
-           // config.Routes.MapHttpRoute(
-           //    name: "Extension",
-           //    routeTemplate: "api/{controller}/{id}",
-           //    defaults: new { id = RouteParameter.Optional, namespaces = "Systex.Dynamics.Api.Extension" }
-           //);
         }
     }
 }

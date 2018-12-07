@@ -31,7 +31,7 @@ namespace Systex.Dynamics.WebApi.App_Start
             try
             {
                 config.Services.Replace(typeof(IDocumentationProvider),
-                    new XmlCommentDocumentationProvider(HttpContext.Current.Server.MapPath("~/bin/Systex.Dynamics.WebApi.XML")));
+                    new XmlCommentDocumentationProvider(HttpContext.Current.Server.MapPath("~/bin/Systex.Dynamics.WebApi.xml")));
             }
             catch (FileNotFoundException)
             {

@@ -38,7 +38,7 @@ namespace Systex.Dynamics.Api.Extension
             {
                 if (identity.Claims != null && identity.Claims.Count() > 0)
                 {
-                    string roleType = identity.Claims.First(a => a.Type == "RoleType").Value;
+                    //string roleType = identity.Claims.First(a => a.Type == "RoleType").Value;
                     string userName = identity.Claims.First(a => a.Type == "UserName").Value;
 
                     if (_UserIdentityManager != null && _UserIdentityManager.Count > 0)
@@ -50,9 +50,9 @@ namespace Systex.Dynamics.Api.Extension
                         string name = identity.Claims.First(a => a.Type == "UserName").Value;
                         string pwd = identity.Claims.First(a => a.Type == "Password").Value;
 
-                        if (roleType == "1")
-                            service = new CRMService().OrgService;
-                        else service = new CRMService().GetCrmService(name, pwd);
+                        //if (roleType == "1")
+                        //    service = new CRMService().OrgService;
+                         service = new CRMService().GetCrmService(name, pwd);
 
                         UserIdentityManager.AddUserIdentity(name, service);
                     }
@@ -77,7 +77,7 @@ namespace Systex.Dynamics.Api.Extension
             string clientid = string.Empty;
             if (identity.Claims != null && identity.Claims.Count() > 0)
             {
-                string roleType = identity.Claims.First(a => a.Type == "RoleType").Value;
+                //string roleType = identity.Claims.First(a => a.Type == "RoleType").Value;
                 clientid = identity.Claims.First(a => a.Type == "ClientId").Value;
             }
             return clientid;

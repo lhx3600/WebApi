@@ -27,6 +27,9 @@ namespace Systex.Dynamics.WebApi.Providers
         /// </summary>
         public string RoleType { get; set; }
 
+        /// <summary>
+        /// 公共客户端ID
+        /// </summary>
         private readonly string _publicClientId;
 
         public ApplicationOAuthProvider(string publicClientId)
@@ -58,7 +61,7 @@ namespace Systex.Dynamics.WebApi.Providers
             }
             identity.AddClaim(new Claim("UserName", context.UserName));
             identity.AddClaim(new Claim("Password", newpassword));
-            //UserIdentityManager.AddUserIdentity(context.UserName, crmService);
+            UserIdentityManager.AddUserIdentity(context.UserName, crmService);
             
             var ticket = new AuthenticationTicket(identity, new AuthenticationProperties());
             context.Validated(ticket);
@@ -89,7 +92,7 @@ namespace Systex.Dynamics.WebApi.Providers
             RoleType = context.Parameters["type"];
 
             string clientId = string.Empty; //最终客户端唯一凭证
-
+           
             ////资源验证
             //if (UserName != null && Password != null && RoleType != null)
             //{
@@ -123,12 +126,13 @@ namespace Systex.Dynamics.WebApi.Providers
             //else {
             //    context.SetError("invalid_grant", "请输入用户名和密码。");
             //}
-            //context.Validated(clientId);
+             context.Validated(clientId);
+
             return base.ValidateClientAuthentication(context);
         }
 
         /// <summary>
-        /// 分派客户端验证值
+        /// 分派客户端验证值(客户端验证模式)
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
